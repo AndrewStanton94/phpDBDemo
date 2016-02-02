@@ -15,8 +15,14 @@
 		</section>
 
 		<h2>The Data</h2>
-		<ul id="theData">
-
+		<ul id="retrievedData">
 		</ul>
+
+		<h2>Add new data</h2>
+		<form id="newData">
+			<label for="newName">Next name</label>
+			<input type="text" name="newName">
+			<input type="submit" name="" value="Upload">
+		</form>
 	</body>
 </html>

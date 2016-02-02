@@ -17,16 +17,17 @@ $urlParameters = explodeQuery($_SERVER['QUERY_STRING']);
 
 switch($_SERVER['REQUEST_METHOD']) {
     case "POST":                    // Creation
-        echo "<strong><code>Post</code></strong>: <br>";
+        /* echo "<strong><code>Post</code></strong>: <br>"; */
+		print_r($urlParameters);
         break;
 
     case "GET":						//Retrieval
-        echo "<p><strong><code>Get</code></strong>:</p>";
+        /* echo "<p><strong><code>Get</code></strong>:</p>"; */
 		get($db, $urlParameters);
 	break;
 
     case "DELETE":
-        echo "<strong><code>Delete</code></strong>: <br>";
+        /* echo "<strong><code>Delete</code></strong>: <br>"; */
         break;
 
     default:

@@ -14,9 +14,7 @@
 		$rows[] = $DB->query(DBINIT);
 		$results["rows"] = $rows;
 		var_dump($results);
-	}
-
-
+	};
 
     function createConnection(){
         // DatabaseSourceName: URL, DatabaseName, Encoding
@@ -24,10 +22,9 @@
         $options = array(
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_EMULATE_PREPARES => false,
-            PDO::ATTR_PERSISTENT => true,    // Investigate ramifications
+            PDO::ATTR_PERSISTENT => true,
             PDO::MYSQL_ATTR_USE_BUFFERED_QUERY => true
-        );      // => MEANS . Access object attr
-                // :: MEANS   Scope modification
+        );
 
         try {
             $db = new PDO($dsn, DBUSER, DBPW, $options);

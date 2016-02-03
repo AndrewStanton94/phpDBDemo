@@ -5,15 +5,20 @@
 		/* echo $_SERVER['QUERY_STRING']; */
 		if ($_SERVER['QUERY_STRING'] == "") {
 			$query = $db->query("SELECT * FROM firstTable");
-			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 		}
 		else{
 			/* print_r($urlParameters); */
 			$query = $db->prepare('SELECT * FROM firstTable WHERE id = :id ');
 			$query->bindValue(':id', $urlParameters['id'], PDO::PARAM_INT);
 			$query->execute();
-			$result = $query->fetchAll(PDO::FETCH_ASSOC);
 		}
+		$result = $query->fetchAll(PDO::FETCH_ASSOC);
 		echo json_encode($result);
+	}
+
+	function post($db, $urlParameters){
+		$query = $db->prepare("INSERT INTO firstTable VALUES(null, :name)");
+		$query->execute(array(':name' => $urlParameters['newName']));
+		$affected_rows = $query->rowCount();
 	}
 ?>

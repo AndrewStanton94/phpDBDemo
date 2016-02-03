@@ -18,7 +18,7 @@ $urlParameters = explodeQuery($_SERVER['QUERY_STRING']);
 switch($_SERVER['REQUEST_METHOD']) {
     case "POST":                    // Creation
         /* echo "<strong><code>Post</code></strong>: <br>"; */
-		print_r($urlParameters);
+		post($db, $urlParameters);
         break;
 
     case "GET":						//Retrieval

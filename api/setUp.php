@@ -31,6 +31,7 @@
             $db->exec("USE ".DBNAME); // MySQL-only
         }
         catch(PDOException $e){
+			http_response_code(500);
             echo "<strong>There was an error with the connection</strong><br>";
             echo "gm: " . $e->getMessage() . "<br>";
             echo "eC: " . $db->errorCode() . "<br>";

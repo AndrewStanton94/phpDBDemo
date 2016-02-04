@@ -16,6 +16,7 @@
 
 		<h2>The Data</h2>
 		<ul id="retrievedData">
+			<li>No data yet</li>
 		</ul>
 
 		<h2>Add new data</h2>
